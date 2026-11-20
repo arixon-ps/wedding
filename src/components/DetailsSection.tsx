@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaroqueSideFlourish, WhiteRoseSprig } from './BaroqueOrnaments';
+import { BaroqueSideFlourish, LuxuryWhiteRoseCluster } from './BaroqueOrnaments';
 import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
 import {
   CalendarDrawIcon,
@@ -28,7 +28,7 @@ export const DetailsSection: React.FC = () => {
           transform: `translate3d(${parallaxRight.x}px, ${parallaxRight.y}px, 0) rotate(${parallaxRight.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig className="absolute -left-6 top-8 w-24 opacity-85 animate-floral-sway" />
+        <LuxuryWhiteRoseCluster className="absolute -left-12 top-6 w-32 xl:w-40 opacity-90 animate-floral-sway" />
         <BaroqueSideFlourish flipX className="relative w-full h-auto" />
       </div>
       <div
@@ -38,7 +38,7 @@ export const DetailsSection: React.FC = () => {
           transform: `translate3d(${parallaxLeft.x}px, ${parallaxLeft.y}px, 0) rotate(${parallaxLeft.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig flipX className="absolute -right-6 bottom-8 w-24 opacity-85 animate-floral-sway" />
+        <LuxuryWhiteRoseCluster flipX className="absolute -right-12 bottom-6 w-32 xl:w-40 opacity-90 animate-floral-sway" />
         <BaroqueSideFlourish className="relative w-full h-auto" />
       </div>
 

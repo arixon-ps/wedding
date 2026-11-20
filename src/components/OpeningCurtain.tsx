@@ -3,7 +3,7 @@ import {
   BaroqueCornerScroll,
   BaroqueCurtainCluster,
   GoldWaxSeal,
-  WhiteRoseSprig,
+  LuxuryWhiteRoseCluster,
 } from './BaroqueOrnaments';
 
 interface OpeningCurtainProps {
@@ -95,7 +95,7 @@ export const OpeningCurtain: React.FC<OpeningCurtainProps> = ({
             : 'translate3d(2%, 0, 0) scale(1.08)',
         }}
       >
-        <WhiteRoseSprig className="absolute right-8 top-1/4 w-44 md:w-56 opacity-90" />
+        <LuxuryWhiteRoseCluster className="absolute right-4 top-1/5 w-48 md:w-64 opacity-95" />
         <BaroqueCurtainCluster flipX className="relative w-full h-[96vh] max-w-[620px] object-contain" />
       </div>
 
@@ -108,7 +108,7 @@ export const OpeningCurtain: React.FC<OpeningCurtainProps> = ({
             : 'translate3d(-2%, 0, 0) scale(1.08)',
         }}
       >
-        <WhiteRoseSprig flipX className="absolute left-8 bottom-1/4 w-44 md:w-56 opacity-90" />
+        <LuxuryWhiteRoseCluster flipX className="absolute left-4 bottom-1/5 w-48 md:w-64 opacity-95" />
         <BaroqueCurtainCluster className="relative w-full h-[96vh] max-w-[620px] object-contain" />
       </div>
 

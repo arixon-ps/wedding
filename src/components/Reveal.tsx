@@ -29,23 +29,45 @@ export const Reveal: React.FC<RevealProps> = ({
       return;
     }
 
+    let revealed = false;
+    const revealNow = () => {
+      if (revealed) return;
+      revealed = true;
+      setVisible(true);
+      observer.disconnect();
+      window.removeEventListener('scroll', checkInView);
+    };
+
+    const checkInView = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.96) {
+        revealNow();
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
+          if (entry.isIntersecting || entry.boundingClientRect.top <= window.innerHeight * 0.96) {
+            revealNow();
+            break;
           }
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: '0px 0px -30px 0px',
+        threshold: 0.02,
+        rootMargin: '60px 0px 40px 0px',
       },
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    window.addEventListener('scroll', checkInView, { passive: true });
+    checkInView();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', checkInView);
+    };
   }, []);
 
   return (
@@ -80,20 +102,42 @@ export const DrawOnView: React.FC<{ children: React.ReactNode; className?: strin
       return;
     }
 
+    let done = false;
+    const drawNow = () => {
+      if (done) return;
+      done = true;
+      setDrawn(true);
+      observer.disconnect();
+      window.removeEventListener('scroll', checkInView);
+    };
+
+    const checkInView = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.96) {
+        drawNow();
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setDrawn(true);
-            observer.unobserve(entry.target);
+          if (entry.isIntersecting || entry.boundingClientRect.top <= window.innerHeight * 0.96) {
+            drawNow();
+            break;
           }
         }
       },
-      { threshold: 0.2 },
+      { threshold: 0.05, rootMargin: '40px 0px 40px 0px' },
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    window.addEventListener('scroll', checkInView, { passive: true });
+    checkInView();
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', checkInView);
+    };
   }, []);
 
   return (

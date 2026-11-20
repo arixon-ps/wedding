@@ -8,7 +8,8 @@ import {
 import {
   ArabesqueCartoucheBackdrop,
   BaroqueCornerScroll,
-  WhiteRoseSprig,
+  GoldArabesqueMedallionDivider,
+  LuxuryWhiteRoseCluster,
 } from './BaroqueOrnaments';
 import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
 import { QuillAndSealDrawIcon } from './ThinLineIcons';
@@ -73,15 +74,15 @@ export const PrivateWishesSection: React.FC<PrivateWishesSectionProps> = ({
       className="relative w-full py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
     >
       <Reveal className="relative max-w-[540px] mx-auto">
-        {/* Top-Left Corner White Rose + 3D Baroque Stucco Relief */}
+        {/* Top-Left Corner Lush White Rose + 3D Baroque Stucco Relief */}
         <div
           aria-hidden="true"
-          className="hidden sm:block absolute -top-6 -left-14 w-32 z-10 pointer-events-none"
+          className="absolute -top-8 -left-6 sm:-top-10 sm:-left-18 w-32 sm:w-44 z-10 pointer-events-none animate-floral-sway"
           style={{
             transform: `translate3d(${-parallax.x * 0.5}px, ${parallax.y * 0.5}px, 0) rotate(12deg)`,
           }}
         >
-          <WhiteRoseSprig flipX className="w-full h-auto" />
+          <LuxuryWhiteRoseCluster flipX className="w-full h-auto" />
         </div>
         <div
           aria-hidden="true"
@@ -90,15 +91,15 @@ export const PrivateWishesSection: React.FC<PrivateWishesSectionProps> = ({
           <BaroqueCornerScroll className="w-full h-auto" />
         </div>
 
-        {/* Bottom-Right Corner White Rose + 3D Baroque Stucco Relief */}
+        {/* Bottom-Right Corner Lush White Rose + 3D Baroque Stucco Relief */}
         <div
           aria-hidden="true"
-          className="hidden sm:block absolute -bottom-6 -right-14 w-32 z-10 pointer-events-none"
+          className="absolute -bottom-8 -right-6 sm:-bottom-10 sm:-right-18 w-32 sm:w-44 z-10 pointer-events-none animate-floral-sway"
           style={{
             transform: `translate3d(${parallax.x * 0.5}px, ${-parallax.y * 0.5}px, 0) rotate(12deg)`,
           }}
         >
-          <WhiteRoseSprig flipY className="w-full h-auto" />
+          <LuxuryWhiteRoseCluster flipY className="w-full h-auto" />
         </div>
         <div
           aria-hidden="true"
@@ -126,7 +127,7 @@ export const PrivateWishesSection: React.FC<PrivateWishesSectionProps> = ({
                 كلماتكم ومباركتكم تصل مباشرة وبشكل خاص إلى إبراهيم وشهد
               </p>
 
-              <div className="mx-auto mt-5 mb-8 w-24 h-px bg-gradient-to-r from-transparent via-[#9E7B3B]/60 to-transparent" />
+              <GoldArabesqueMedallionDivider className="mx-auto mt-4 mb-7 w-48 sm:w-56 h-6" />
             </Reveal>
 
             {submitted ? (

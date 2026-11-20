@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BaroqueSideFlourish,
   BrideGroomSilhouette,
-  WhiteRoseSprig,
+  LuxuryWhiteRoseCluster,
 } from './BaroqueOrnaments';
 import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
 import {
@@ -37,11 +37,11 @@ export const FamiliesSection: React.FC = () => {
           transform: `translate3d(${parallaxRight.x}px, ${parallaxRight.y}px, 0) rotate(${parallaxRight.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig className="absolute -left-8 top-6 w-28 opacity-90 animate-floral-sway" />
+        <LuxuryWhiteRoseCluster className="absolute -left-14 top-4 w-36 md:w-44 opacity-95 animate-floral-sway" />
         <BaroqueSideFlourish flipX className="relative w-full h-auto" />
       </div>
 
-      {/* Left Edge 3D Baroque Relief + Tucked White Roses */}
+      {/* Left Edge 3D Baroque Relief + Lush White Roses */}
       <div
         aria-hidden="true"
         className="hidden sm:block absolute bottom-12 -left-10 md:-left-6 w-28 md:w-40 opacity-95 pointer-events-none z-0"
@@ -49,7 +49,7 @@ export const FamiliesSection: React.FC = () => {
           transform: `translate3d(${parallaxLeft.x}px, ${parallaxLeft.y}px, 0) rotate(${parallaxLeft.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig flipX className="absolute -right-8 bottom-8 w-28 opacity-90 animate-floral-sway" />
+        <LuxuryWhiteRoseCluster flipX className="absolute -right-14 bottom-4 w-36 md:w-44 opacity-95 animate-floral-sway" />
         <BaroqueSideFlourish className="relative w-full h-auto" />
       </div>
 

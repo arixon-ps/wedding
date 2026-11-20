@@ -5,7 +5,8 @@ import palaceChandeliersImg from '../assets/images/palace_chandeliers_hall_17951
 import {
   BaroqueCornerScroll,
   BaroqueTopCrownMedallion,
-  WhiteRoseSprig,
+  GoldArabesqueMedallionDivider,
+  LuxuryWhiteRoseCluster,
 } from './BaroqueOrnaments';
 import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
 import {
@@ -76,18 +77,28 @@ export const EditorialVisualsSection: React.FC = () => {
       aria-label="لمحات من أجواء الفرح"
       className="relative w-full py-16 md:py-24 px-4 sm:px-6 overflow-hidden"
     >
-      {/* Flanking subtle white roses */}
+      {/* Soft Warm Golden Radial Ambient Glow */}
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute top-16 -right-8 w-36 opacity-80 pointer-events-none animate-floral-sway"
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(circle at 50% 54%, rgba(255,244,218,0.28) 0%, rgba(197,189,193,0) 68%)',
+        }}
+      />
+
+      {/* Lush White Rose Bouquets on Outer Edges */}
+      <div
+        aria-hidden="true"
+        className="hidden md:block absolute top-14 -right-10 lg:-right-6 w-44 lg:w-52 opacity-90 pointer-events-none animate-floral-sway"
       >
-        <WhiteRoseSprig className="w-full h-auto" />
+        <LuxuryWhiteRoseCluster className="w-full h-auto" />
       </div>
       <div
         aria-hidden="true"
-        className="hidden lg:block absolute bottom-16 -left-8 w-36 opacity-80 pointer-events-none animate-floral-sway"
+        className="hidden md:block absolute bottom-14 -left-10 lg:-left-6 w-44 lg:w-52 opacity-90 pointer-events-none animate-floral-sway"
       >
-        <WhiteRoseSprig flipX className="w-full h-auto" />
+        <LuxuryWhiteRoseCluster flipX flipY className="w-full h-auto" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
@@ -100,11 +111,11 @@ export const EditorialVisualsSection: React.FC = () => {
           <p className="font-amiri text-lg sm:text-xl text-[#3E383A]/85 mt-2 max-w-md">
             تفاصيلٌ صيغت على مهلٍ لتليقَ ببهجةِ لقائكم
           </p>
-          <div className="mt-4 w-28 h-px bg-gradient-to-r from-transparent via-[#9E7B3B]/65 to-transparent" />
+          <GoldArabesqueMedallionDivider className="w-52 sm:w-64 h-6 mt-3" />
         </Reveal>
 
-        {/* Three Arched Editorial Frames */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-9 md:gap-7 lg:gap-10 items-center">
+        {/* Three 3D Gold-Framed Arched Editorial Frames */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-7 lg:gap-10 items-center">
           {frames.map((frame, index) => {
             const isCenter = index === 1;
             const failed = Boolean(failedFrames[frame.id]);
@@ -124,9 +135,9 @@ export const EditorialVisualsSection: React.FC = () => {
                     }px, 0)`,
                   }}
                 >
-                  {/* Double-Hairline Arched Portrait Frame */}
+                  {/* Sculpted 3D Metallic Gold Beveled Arched Frame */}
                   <div className="relative w-full max-w-[310px]">
-                    {/* Subtle sculpted Baroque corner flourish on outer frames */}
+                    {/* Sculpted Baroque Corner Scrolls on Outer Frames */}
                     {index === 0 && (
                       <div
                         aria-hidden="true"
@@ -144,31 +155,42 @@ export const EditorialVisualsSection: React.FC = () => {
                       </div>
                     )}
 
-                    <div className="relative w-full p-2.5 rounded-t-[999px] rounded-b-2xl bg-[#EAE6E3]/85 border border-[#9E7B3B]/45 shadow-[0_20px_38px_rgba(50,40,45,0.22)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5">
-                      <div className="relative overflow-hidden rounded-t-[999px] rounded-b-xl border border-[#9E7B3B]/35 bg-[#EFECE9]">
-                        <div className={`relative w-full ${frame.aspectClass} overflow-hidden`}>
-                          {failed ? (
-                            <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-[radial-gradient(circle_at_50%_40%,#F8F6F4_0%,#EAE6E3_65%,#DDD5D0_100%)]">
-                              {frame.icon}
-                              <span className="mt-3 font-calligraphy text-2xl text-[#9E7B3B]">
-                                {frame.title}
-                              </span>
-                            </div>
-                          ) : (
-                            <img
-                              src={frame.src}
-                              alt={frame.alt}
-                              loading="lazy"
-                              referrerPolicy="no-referrer"
-                              onError={() => markFailed(frame.id)}
-                              className="w-full h-full object-cover animate-ken-burns transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                    {/* Outer 3D Gold Metallic Molding Rim */}
+                    <div
+                      className="relative w-full p-[4px] rounded-t-[999px] rounded-b-2xl shadow-[0_24px_44px_rgba(50,40,45,0.28),0_0_24px_rgba(223,190,116,0.22)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5"
+                      style={{
+                        background:
+                          'linear-gradient(135deg, #FFF3CC 0%, #DFBE74 28%, #9E7B3B 55%, #E8C97E 80%, #775820 100%)',
+                      }}
+                    >
+                      {/* Carved Ivory Matte Cushion */}
+                      <div className="relative p-2 rounded-t-[999px] rounded-b-[14px] bg-[#EAE6E3] shadow-[inset_0_2px_4px_rgba(255,255,255,0.85),inset_0_-2px_6px_rgba(62,56,58,0.14)]">
+                        {/* Inner Gold Hairline Frame */}
+                        <div className="relative overflow-hidden rounded-t-[999px] rounded-b-xl border-[1.5px] border-[#9E7B3B]/65 bg-[#EFECE9]">
+                          <div className={`relative w-full ${frame.aspectClass} overflow-hidden`}>
+                            {failed ? (
+                              <div className="w-full h-full flex flex-col items-center justify-center p-6 bg-[radial-gradient(circle_at_50%_40%,#F8F6F4_0%,#EAE6E3_65%,#DDD5D0_100%)]">
+                                {frame.icon}
+                                <span className="mt-3 font-calligraphy text-2xl text-[#9E7B3B]">
+                                  {frame.title}
+                                </span>
+                              </div>
+                            ) : (
+                              <img
+                                src={frame.src}
+                                alt={frame.alt}
+                                loading="lazy"
+                                referrerPolicy="no-referrer"
+                                onError={() => markFailed(frame.id)}
+                                className="w-full h-full object-cover animate-ken-burns transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                              />
+                            )}
+                            {/* Soft luminous golden vignette around inner edge */}
+                            <div
+                              aria-hidden="true"
+                              className="absolute inset-0 pointer-events-none shadow-[inset_0_0_28px_rgba(62,56,58,0.18)]"
                             />
-                          )}
-                          {/* Soft luminous ivory vignette around inner edge */}
-                          <div
-                            aria-hidden="true"
-                            className="absolute inset-0 pointer-events-none shadow-[inset_0_0_26px_rgba(62,56,58,0.16)]"
-                          />
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -378,7 +378,7 @@ export const BaroqueCurtainCluster: React.FC<{
 
 /**
  * Arabesque Pointed-Arch & Scalloped Cartouche Plaque Frame (#EAE6E3)
- * with double hairline antique gold/taupe borders.
+ * with 3D sculpted metallic antique gold beveled molding and filigree corner accents.
  */
 export const ArabesqueCartoucheBackdrop: React.FC<{
   variant?: 'hero' | 'rsvp';
@@ -397,25 +397,53 @@ export const ArabesqueCartoucheBackdrop: React.FC<{
       >
         <defs>
           <linearGradient id={`${uid}-plaque`} x1="0" y1="0" x2="520" y2="760" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#F0ECE9" />
-            <stop offset="50%" stopColor="#EAE6E3" />
-            <stop offset="100%" stopColor="#E3DEDB" />
+            <stop offset="0%" stopColor="#F3EFEA" />
+            <stop offset="48%" stopColor="#EAE6E3" />
+            <stop offset="100%" stopColor="#E1DBD6" />
+          </linearGradient>
+          <linearGradient id={`${uid}-gold3d`} x1="20" y1="12" x2="500" y2="748" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#FFF0C4" />
+            <stop offset="22%" stopColor="#D7B264" />
+            <stop offset="50%" stopColor="#9E7B3B" />
+            <stop offset="78%" stopColor="#E6C67C" />
+            <stop offset="100%" stopColor="#775820" />
+          </linearGradient>
+          <linearGradient id={`${uid}-gold-inner`} x1="500" y1="20" x2="20" y2="740" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#856529" />
+            <stop offset="50%" stopColor="#DFBE74" />
+            <stop offset="100%" stopColor="#9E7B3B" />
           </linearGradient>
         </defs>
-        {/* Outer Scalloped Arabesque Arch Silhouette */}
+        {/* Outer 3D Gold Bevel Shadow Rim */}
         <path
           d="M260 12 C290 36, 332 42, 368 54 C406 66, 442 74, 468 96 C490 116, 498 136, 498 164 L498 656 C498 692, 476 716, 448 730 C420 744, 384 744, 344 744 L176 744 C136 744, 100 744, 72 730 C44 716, 22 692, 22 656 L22 164 C22 136, 30 116, 52 96 C78 74, 114 66, 152 54 C188 42, 230 36, 260 12 Z"
           fill={`url(#${uid}-plaque)`}
-          stroke="#B89B62"
-          strokeWidth="1.5"
+          stroke={`url(#${uid}-gold3d)`}
+          strokeWidth="5"
         />
-        {/* Inner Double Hairline Gold/Taupe Border */}
+        {/* Specular Highlight Ridge on Gold Frame */}
+        <path
+          d="M260 14.5 C289 38, 331 44, 367 56 C404 68, 440 76, 466 97.5 C487 117, 495.5 137, 495.5 164 L495.5 656 C495.5 690, 474 714, 446 727.5 C418 741, 384 741.5, 344 741.5 L176 741.5 C136 741.5, 102 741, 74 727.5 C46 714, 24.5 690, 24.5 656 L24.5 164 C24.5 137, 33 117, 54 97.5 C80 76, 116 68, 153 56 C189 44, 231 38, 260 14.5 Z"
+          fill="none"
+          stroke="#FFF7DC"
+          strokeOpacity="0.7"
+          strokeWidth="1.2"
+        />
+        {/* Inner Recessed 3D Metallic Gold Frame */}
         <path
           d="M260 28 C286 50, 326 54, 360 66 C394 78, 428 84, 452 104 C472 122, 482 140, 482 168 L482 652 C482 684, 462 704, 436 716 C410 728, 376 728, 340 728 L180 728 C144 728, 110 728, 84 716 C58 704, 38 684, 38 652 L38 168 C38 140, 48 122, 68 104 C92 84, 126 78, 160 66 C194 54, 234 50, 260 28 Z"
           fill="none"
+          stroke={`url(#${uid}-gold-inner)`}
+          strokeOpacity="0.82"
+          strokeWidth="1.6"
+        />
+        {/* Delicate Inner Filigree Hairline */}
+        <path
+          d="M260 36 C284 56, 322 60, 354 72 C388 83, 420 89, 444 108 C463 125, 474 143, 474 170 L474 648 C474 678, 456 696, 431 708 C406 719, 373 720, 338 720 L182 720 C147 720, 114 719, 89 708 C64 696, 46 678, 46 648 L46 170 C46 143, 57 125, 76 108 C100 89, 132 83, 166 72 C198 60, 236 56, 260 36 Z"
+          fill="none"
           stroke="#9E7B3B"
-          strokeOpacity="0.45"
-          strokeWidth="1"
+          strokeOpacity="0.32"
+          strokeWidth="0.9"
         />
       </svg>
     );
@@ -423,7 +451,7 @@ export const ArabesqueCartoucheBackdrop: React.FC<{
 
   return (
     <svg
-      viewBox="0 0 560 640"
+      viewBox="0 0 560 720"
       preserveAspectRatio="none"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -431,27 +459,60 @@ export const ArabesqueCartoucheBackdrop: React.FC<{
       className={`pointer-events-none select-none ${className}`}
     >
       <defs>
-        <linearGradient id={`${uid}-plaque`} x1="0" y1="0" x2="560" y2="640" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#F1EDE9" />
-          <stop offset="55%" stopColor="#EAE6E3" />
-          <stop offset="100%" stopColor="#E1DBD7" />
+        <linearGradient id={`${uid}-plaque`} x1="0" y1="0" x2="560" y2="720" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#F4F0EC" />
+          <stop offset="50%" stopColor="#EAE6E3" />
+          <stop offset="100%" stopColor="#DFD8D3" />
+        </linearGradient>
+        <linearGradient id={`${uid}-gold3d`} x1="24" y1="14" x2="536" y2="706" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFF2C8" />
+          <stop offset="22%" stopColor="#DFBE74" />
+          <stop offset="50%" stopColor="#9E7B3B" />
+          <stop offset="78%" stopColor="#E6C77E" />
+          <stop offset="100%" stopColor="#775820" />
+        </linearGradient>
+        <linearGradient id={`${uid}-gold-inner`} x1="536" y1="20" x2="24" y2="700" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#856529" />
+          <stop offset="48%" stopColor="#E2C278" />
+          <stop offset="100%" stopColor="#9E7B3B" />
         </linearGradient>
       </defs>
-      {/* Outer Arabesque Pointed-Arch Scalloped Cartouche */}
+      {/* Outer Arabesque Pointed-Arch Scalloped Cartouche with 3D Sculpted Gold Bevel */}
       <path
-        d="M280 14 C312 44, 356 48, 392 66 C432 86, 466 94, 492 128 C518 162, 536 196, 536 244 L536 476 C536 528, 508 566, 470 590 C432 614, 384 618, 336 620 L280 626 L224 620 C176 618, 128 614, 90 590 C52 566, 24 528, 24 476 L24 244 C24 196, 42 162, 68 128 C94 94, 128 86, 168 66 C204 48, 248 44, 280 14 Z"
+        d="M280 14 C312 44, 356 48, 392 66 C432 86, 466 94, 492 128 C518 162, 536 196, 536 244 L536 556 C536 608, 508 646, 470 670 C432 694, 384 698, 336 700 L280 706 L224 700 C176 698, 128 694, 90 670 C52 646, 24 608, 24 556 L24 244 C24 196, 42 162, 68 128 C94 94, 128 86, 168 66 C204 48, 248 44, 280 14 Z"
         fill={`url(#${uid}-plaque)`}
-        stroke="#B89B62"
-        strokeWidth="1.6"
+        stroke={`url(#${uid}-gold3d)`}
+        strokeWidth="5.5"
       />
-      {/* Inner Double Hairline Gold/Taupe Border */}
+      {/* Specular Ridge Highlight along Gold Molding */}
       <path
-        d="M280 30 C308 58, 350 62, 384 78 C422 98, 454 106, 478 136 C502 168, 520 200, 520 246 L520 474 C520 520, 494 554, 458 576 C422 598, 378 602, 332 604 L280 610 L228 604 C182 602, 138 598, 102 576 C66 554, 40 520, 40 474 L40 246 C40 200, 58 168, 82 136 C106 106, 138 98, 176 78 C210 62, 252 58, 280 30 Z"
+        d="M280 17 C311 46, 355 50, 390 68 C430 88, 463 96, 489 129 C515 163, 533 197, 533 244 L533 556 C533 606, 506 643, 468 667 C430 691, 383 695, 336 697 L280 703 L224 697 C177 695, 130 691, 92 667 C54 643, 27 606, 27 556 L27 244 C27 197, 45 163, 71 129 C97 96, 130 88, 170 68 C205 50, 249 46, 280 17 Z"
+        fill="none"
+        stroke="#FFF8E2"
+        strokeOpacity="0.72"
+        strokeWidth="1.2"
+      />
+      {/* Inner Double 3D Metallic Gold Molding */}
+      <path
+        d="M280 30 C308 58, 350 62, 384 78 C422 98, 454 106, 478 136 C502 168, 520 200, 520 246 L520 554 C520 600, 494 634, 458 656 C422 678, 378 682, 332 684 L280 690 L228 684 C182 682, 138 678, 102 656 C66 634, 40 600, 40 554 L40 246 C40 200, 58 168, 82 136 C106 106, 138 98, 176 78 C210 62, 252 58, 280 30 Z"
+        fill="none"
+        stroke={`url(#${uid}-gold-inner)`}
+        strokeOpacity="0.85"
+        strokeWidth="1.8"
+      />
+      {/* Delicate Inner Filigree Accent Line */}
+      <path
+        d="M280 39 C306 65, 346 69, 379 84 C415 103, 446 111, 469 140 C493 171, 511 202, 511 247 L511 551 C511 595, 486 627, 452 648 C417 669, 374 673, 330 675 L280 681 L230 675 C186 673, 143 669, 108 648 C74 627, 49 595, 49 551 L49 247 C49 202, 67 171, 91 140 C114 111, 145 103, 181 84 C214 69, 254 65, 280 39 Z"
         fill="none"
         stroke="#9E7B3B"
-        strokeOpacity="0.48"
-        strokeWidth="1"
+        strokeOpacity="0.35"
+        strokeWidth="0.9"
       />
+      {/* Gold Corner & Apex Pearl Studs */}
+      <circle cx="280" cy="22" r="3.2" fill="#DFBE74" />
+      <circle cx="280" cy="698" r="2.8" fill="#DFBE74" />
+      <circle cx="32" cy="390" r="2.5" fill="#C5A059" />
+      <circle cx="528" cy="390" r="2.5" fill="#C5A059" />
     </svg>
   );
 };
@@ -751,4 +812,326 @@ export const GoldCornerFiligree: React.FC<{ className?: string }> = ({
     <circle cx="7" cy="7" r="1.6" fill="#C5A059" />
   </svg>
 );
+
+/**
+ * Opulent multi-bloom white garden rose cluster with layered scalloped petals, soft fold shadows,
+ * botanical leaves, and antique gold pearl buds for framing outer corners and edges of the invitation.
+ */
+export const LuxuryWhiteRoseCluster: React.FC<OrnamentProps> = ({
+  className = '',
+  flipX = false,
+  flipY = false,
+  rotate = 0,
+}) => {
+  const uid = useId().replace(/:/g, '');
+  const transform = [
+    rotate ? `rotate(${rotate}deg)` : '',
+    flipX ? 'scaleX(-1)' : '',
+    flipY ? 'scaleY(-1)' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  return (
+    <svg
+      viewBox="0 0 260 260"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className={`rose-soft-shadow select-none pointer-events-none ${className}`}
+      style={transform ? { transform } : undefined}
+    >
+      <defs>
+        <linearGradient id={`${uid}-petal-light`} x1="20%" y1="15%" x2="85%" y2="85%">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="58%" stopColor="#F6F1EC" />
+          <stop offset="100%" stopColor="#D8CEC9" />
+        </linearGradient>
+        <linearGradient id={`${uid}-petal-shade`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FBF8F5" />
+          <stop offset="55%" stopColor="#E9E0DA" />
+          <stop offset="100%" stopColor="#C8BCB7" />
+        </linearGradient>
+        <radialGradient id={`${uid}-heart`} cx="45%" cy="40%" r="65%">
+          <stop offset="0%" stopColor="#F2E8DE" />
+          <stop offset="60%" stopColor="#DFD2C9" />
+          <stop offset="100%" stopColor="#BFB1AA" />
+        </radialGradient>
+        <linearGradient id={`${uid}-leaf`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#E1DDD8" />
+          <stop offset="52%" stopColor="#BFB8B3" />
+          <stop offset="100%" stopColor="#99918E" />
+        </linearGradient>
+        <radialGradient id={`${uid}-goldbud`} cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#FFF4CE" />
+          <stop offset="55%" stopColor="#D8B364" />
+          <stop offset="100%" stopColor="#8A6728" />
+        </radialGradient>
+      </defs>
+
+      {/* Pointed Botanical Rose Leaves */}
+      <g>
+        <path d="M52 190 C22 162, 16 122, 44 96 C64 126, 66 160, 52 190 Z" fill={`url(#${uid}-leaf)`} />
+        <path d="M48 180 C40 152, 40 128, 45 104" stroke="#FFFFFF" strokeOpacity="0.45" strokeWidth="1" fill="none" />
+
+        <path d="M168 42 C194 14, 234 16, 248 48 C218 62, 188 58, 168 42 Z" fill={`url(#${uid}-leaf)`} />
+        <path d="M176 42 C198 34, 220 36, 240 46" stroke="#FFFFFF" strokeOpacity="0.45" strokeWidth="1" fill="none" />
+
+        <path d="M192 146 C224 142, 248 164, 238 198 C210 184, 196 166, 192 146 Z" fill={`url(#${uid}-leaf)`} />
+        <path d="M84 44 C98 14, 134 10, 152 36 C130 48, 106 48, 84 44 Z" fill={`url(#${uid}-leaf)`} />
+        <path d="M114 202 C140 198, 162 218, 154 246 C130 234, 118 218, 114 202 Z" fill={`url(#${uid}-leaf)`} />
+      </g>
+
+      {/* Primary White Garden Rose — 5 Outer Scalloped Petals */}
+      <g>
+        {/* Top-left outer petal */}
+        <path
+          d="M112 108 C86 106, 56 86, 62 60 C68 38, 102 36, 122 56 C134 68, 128 92, 112 108 Z"
+          fill={`url(#${uid}-petal-shade)`}
+        />
+        {/* Top-right outer petal */}
+        <path
+          d="M116 108 C118 82, 134 52, 162 56 C186 60, 194 94, 174 114 C160 128, 134 122, 116 108 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+        {/* Bottom-right outer petal */}
+        <path
+          d="M118 114 C142 108, 178 118, 176 146 C174 172, 140 184, 116 168 C102 158, 106 132, 118 114 Z"
+          fill={`url(#${uid}-petal-shade)`}
+        />
+        {/* Bottom-left outer petal */}
+        <path
+          d="M114 116 C118 140, 116 174, 88 176 C62 178, 46 148, 62 124 C74 106, 98 108, 114 116 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+        {/* Mid-left outer petal */}
+        <path
+          d="M110 112 C94 128, 62 134, 50 112 C38 92, 54 64, 78 68 C98 72, 106 94, 110 112 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+
+        {/* 4 Mid-Layer Cupped Ruffled Petals */}
+        <path
+          d="M112 108 C92 98, 78 74, 94 62 C110 50, 138 58, 140 80 C142 96, 126 104, 112 108 Z"
+          fill={`url(#${uid}-petal-light)`}
+          stroke="#CFC3BD"
+          strokeOpacity="0.55"
+          strokeWidth="0.7"
+        />
+        <path
+          d="M118 110 C130 92, 158 84, 164 104 C170 124, 152 148, 130 144 C116 142, 112 124, 118 110 Z"
+          fill={`url(#${uid}-petal-shade)`}
+          stroke="#CFC3BD"
+          strokeOpacity="0.55"
+          strokeWidth="0.7"
+        />
+        <path
+          d="M116 116 C130 128, 136 156, 114 162 C94 168, 74 148, 82 128 C88 114, 104 112, 116 116 Z"
+          fill={`url(#${uid}-petal-light)`}
+          stroke="#CFC3BD"
+          strokeOpacity="0.55"
+          strokeWidth="0.7"
+        />
+        <path
+          d="M110 114 C94 122, 72 114, 74 94 C76 76, 98 68, 112 82 C122 92, 118 106, 110 114 Z"
+          fill={`url(#${uid}-petal-shade)`}
+          stroke="#CFC3BD"
+          strokeOpacity="0.55"
+          strokeWidth="0.7"
+        />
+
+        {/* Inner Spiral Folded Rose Heart */}
+        <path
+          d="M104 92 C118 82, 138 92, 136 110 C134 126, 116 134, 102 124 C112 126, 124 118, 122 106 C120 96, 110 92, 104 92 Z"
+          fill="#FFFFFF"
+          stroke="#C9BCB6"
+          strokeOpacity="0.65"
+          strokeWidth="0.7"
+        />
+        <path
+          d="M96 106 C94 94, 108 88, 118 96 C126 104, 122 122, 108 122 C100 122, 98 114, 104 108 C108 104, 112 106, 112 110 C110 100, 100 100, 96 106 Z"
+          fill={`url(#${uid}-heart)`}
+        />
+      </g>
+
+      {/* Secondary Blooming Rose (Top-Right, Overlapping Petals) */}
+      <g>
+        <path
+          d="M180 86 C164 82, 152 64, 162 50 C172 38, 196 42, 202 58 C206 72, 194 84, 180 86 Z"
+          fill={`url(#${uid}-petal-shade)`}
+        />
+        <path
+          d="M182 86 C190 70, 210 64, 218 78 C226 92, 212 112, 194 110 C182 108, 178 96, 182 86 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+        <path
+          d="M178 88 C186 100, 182 118, 166 118 C150 118, 142 100, 152 86 C158 76, 172 78, 178 88 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+        <path
+          d="M170 72 C182 64, 198 72, 196 86 C194 98, 178 102, 168 92 C178 92, 184 84, 180 76 Z"
+          fill="#FFFFFF"
+          stroke="#CFC3BD"
+          strokeOpacity="0.6"
+          strokeWidth="0.65"
+        />
+        <path
+          d="M172 80 C176 74, 186 76, 186 84 C186 90, 178 92, 174 86 Z"
+          fill={`url(#${uid}-heart)`}
+        />
+      </g>
+
+      {/* Third Blooming Rose (Bottom-Left, Overlapping Petals) */}
+      <g>
+        <path
+          d="M82 184 C66 180, 56 162, 66 150 C76 138, 98 144, 102 160 C106 172, 94 182, 82 184 Z"
+          fill={`url(#${uid}-petal-shade)`}
+        />
+        <path
+          d="M84 186 C94 172, 114 168, 118 184 C122 198, 106 214, 90 210 C78 206, 78 194, 84 186 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+        <path
+          d="M80 186 C82 200, 74 216, 58 212 C44 208, 42 188, 54 176 C64 168, 76 174, 80 186 Z"
+          fill={`url(#${uid}-petal-light)`}
+        />
+        <path
+          d="M72 172 C84 166, 98 174, 94 188 C90 198, 76 200, 68 190 C78 192, 84 184, 80 176 Z"
+          fill="#FFFFFF"
+          stroke="#CFC3BD"
+          strokeOpacity="0.6"
+          strokeWidth="0.65"
+        />
+        <path
+          d="M74 180 C78 175, 86 178, 86 185 C86 190, 78 191, 75 186 Z"
+          fill={`url(#${uid}-heart)`}
+        />
+      </g>
+
+      {/* Unfurling Silk Rosebuds & Antique Gold Baby's-Breath Pearls */}
+      <path
+        d="M188 134 C200 128, 210 138, 206 152 C202 162, 186 162, 178 152 C172 144, 178 136, 188 134 Z"
+        fill={`url(#${uid}-petal-light)`}
+        stroke="#CFC3BD"
+        strokeOpacity="0.55"
+        strokeWidth="0.7"
+      />
+      <path
+        d="M186 138 C194 136, 198 144, 194 150 C190 154, 182 150, 186 138 Z"
+        fill={`url(#${uid}-heart)`}
+      />
+      <path
+        d="M46 102 C56 96, 66 104, 64 116 C62 126, 48 126, 42 116 C38 110, 40 104, 46 102 Z"
+        fill={`url(#${uid}-petal-light)`}
+        stroke="#CFC3BD"
+        strokeOpacity="0.55"
+        strokeWidth="0.7"
+      />
+      <circle cx="220" cy="110" r="4" fill={`url(#${uid}-goldbud)`} />
+      <circle cx="152" cy="46" r="3.4" fill={`url(#${uid}-goldbud)`} />
+      <circle cx="136" cy="186" r="3.8" fill={`url(#${uid}-goldbud)`} />
+      <circle cx="46" cy="156" r="3.2" fill={`url(#${uid}-goldbud)`} />
+      <circle cx="100" cy="42" r="2.6" fill={`url(#${uid}-goldbud)`} />
+    </svg>
+  );
+};
+
+/**
+ * Sculpted 3D Metallic Gold Royal Crown Ornament with pearl finials
+ * crowning the top of the wedding invitation plaque.
+ */
+export const RoyalGoldCrownOrnament: React.FC<{ className?: string }> = ({
+  className = '',
+}) => {
+  const uid = useId().replace(/:/g, '');
+  return (
+    <svg
+      viewBox="0 0 180 86"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className={`drop-shadow-[0_10px_18px_rgba(70,50,20,0.3)] select-none pointer-events-none ${className}`}
+    >
+      <defs>
+        <linearGradient id={`${uid}-crown`} x1="25" y1="14" x2="155" y2="78" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFF4CC" />
+          <stop offset="28%" stopColor="#DFBE74" />
+          <stop offset="65%" stopColor="#A9823C" />
+          <stop offset="100%" stopColor="#72521D" />
+        </linearGradient>
+        <radialGradient id={`${uid}-pearl`} cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="55%" stopColor="#F5EFE7" />
+          <stop offset="100%" stopColor="#C9BEB8" />
+        </radialGradient>
+      </defs>
+
+      {/* Sculpted Royal Crown Body */}
+      <path
+        d="M34 62 L24 30 C38 38, 52 44, 62 34 L90 14 L118 34 C128 44, 142 38, 156 30 L146 62 C110 70, 70 70, 34 62 Z"
+        fill={`url(#${uid}-crown)`}
+        stroke="#FFF2CB"
+        strokeOpacity="0.6"
+        strokeWidth="1.2"
+      />
+      {/* Carved Inner Filigree Arches */}
+      <path
+        d="M42 56 C56 44, 72 44, 90 54 C108 44, 124 44, 138 56"
+        stroke="#FFF3D1"
+        strokeOpacity="0.7"
+        strokeWidth="1.2"
+        fill="none"
+      />
+      {/* Crown Base Rim */}
+      <path
+        d="M32 64 C68 72, 112 72, 148 64 L146 70 C110 78, 70 78, 34 70 Z"
+        fill="#8A682B"
+        stroke="#F6DDA0"
+        strokeOpacity="0.6"
+        strokeWidth="0.9"
+      />
+      {/* Pearl Finials & Center Gem */}
+      <circle cx="90" cy="11" r="5" fill={`url(#${uid}-pearl)`} />
+      <circle cx="22" cy="27" r="4.2" fill={`url(#${uid}-pearl)`} />
+      <circle cx="158" cy="27" r="4.2" fill={`url(#${uid}-pearl)`} />
+      <circle cx="62" cy="31" r="3.4" fill={`url(#${uid}-pearl)`} />
+      <circle cx="118" cy="31" r="3.4" fill={`url(#${uid}-pearl)`} />
+      <circle cx="90" cy="42" r="3.6" fill="#FFF7DC" />
+    </svg>
+  );
+};
+
+/**
+ * Symmetrical golden arabesque ornament divider with pearl center.
+ */
+export const GoldArabesqueMedallionDivider: React.FC<{ className?: string }> = ({
+  className = '',
+}) => (
+  <svg
+    viewBox="0 0 260 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={`pointer-events-none select-none ${className}`}
+  >
+    <path
+      d="M12 16H94C106 16 112 7 122 7C126 7 129 11 130 16C131 11 134 7 138 7C148 7 154 16 166 16H248"
+      stroke="#9E7B3B"
+      strokeOpacity="0.72"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+    />
+    <path
+      d="M94 16C106 16 112 25 122 25C126 25 129 21 130 16C131 21 134 25 138 25C148 25 154 16 166 16"
+      stroke="#C5A059"
+      strokeOpacity="0.7"
+      strokeWidth="1.1"
+      strokeLinecap="round"
+    />
+    <path d="M130 9L135 16L130 23L125 16L130 9Z" fill="#DFBE74" stroke="#9E7B3B" strokeWidth="1" />
+    <circle cx="78" cy="16" r="1.8" fill="#C5A059" />
+    <circle cx="182" cy="16" r="1.8" fill="#C5A059" />
+  </svg>
+);
+
 

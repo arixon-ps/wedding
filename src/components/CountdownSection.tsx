@@ -4,7 +4,7 @@ import {
   BaroqueSideFlourish,
   BaroqueTopCrownMedallion,
   GoldCornerFiligree,
-  WhiteRoseSprig,
+  LuxuryWhiteRoseCluster,
 } from './BaroqueOrnaments';
 import { Reveal } from './Reveal';
 
@@ -39,16 +39,16 @@ export const CountdownSection: React.FC = () => {
         aria-hidden="true"
         className="hidden sm:block absolute top-1/2 -translate-y-1/2 -right-8 md:-right-4 w-24 md:w-36 lg:w-44 pointer-events-none"
       >
-        <WhiteRoseSprig className="absolute -left-5 top-8 w-20 opacity-85 animate-floral-sway" />
+        <LuxuryWhiteRoseCluster className="absolute -left-10 top-6 w-28 md:w-36 opacity-90 animate-floral-sway" />
         <BaroqueSideFlourish flipX className="relative w-full h-auto" />
       </div>
 
-      {/* Far Left Symmetrical 3D Baroque Relief & White Rose */}
+      {/* Far Left Symmetrical 3D Baroque Relief & Lush White Rose */}
       <div
         aria-hidden="true"
         className="hidden sm:block absolute top-1/2 -translate-y-1/2 -left-8 md:-left-4 w-24 md:w-36 lg:w-44 pointer-events-none"
       >
-        <WhiteRoseSprig flipX className="absolute -right-5 bottom-8 w-20 opacity-85 animate-floral-sway" />
+        <LuxuryWhiteRoseCluster flipX className="absolute -right-10 bottom-6 w-28 md:w-36 opacity-90 animate-floral-sway" />
         <BaroqueSideFlourish className="relative w-full h-auto" />
       </div>
 

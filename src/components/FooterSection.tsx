@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { BaroqueSideFlourish, WhiteRoseSprig } from './BaroqueOrnaments';
+import { BaroqueSideFlourish, LuxuryWhiteRoseCluster } from './BaroqueOrnaments';
 import { Reveal } from './Reveal';
 
 interface FooterSectionProps {
@@ -36,13 +36,22 @@ export const FooterSection: React.FC<FooterSectionProps> = ({
       aria-label="خاتمة الدعوة"
       className="relative w-full bg-[#EFECE9] py-16 md:py-20 px-4 sm:px-6 overflow-hidden border-t border-[#9E7B3B]/20 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]"
     >
-      {/* Right-edge 3D White Baroque Relief & White Roses (5 consecutive taps unlock Owner Wishes) */}
+      {/* Left-edge 3D White Baroque Relief & Lush White Roses */}
+      <div
+        aria-hidden="true"
+        className="hidden sm:block absolute top-1/2 -translate-y-1/2 -left-4 sm:-left-2 w-24 sm:w-28 md:w-36 pointer-events-none select-none"
+      >
+        <LuxuryWhiteRoseCluster flipX className="absolute -right-10 top-6 w-28 md:w-32 opacity-90 animate-floral-sway" />
+        <BaroqueSideFlourish className="relative w-full h-auto" />
+      </div>
+
+      {/* Right-edge 3D White Baroque Relief & Lush White Roses (5 consecutive taps unlock Owner Wishes) */}
       <div
         data-testid="footer-secret-ornament"
         onClick={handleOrnamentTap}
         className="absolute top-1/2 -translate-y-1/2 -right-4 sm:-right-2 w-24 sm:w-28 md:w-36 cursor-default select-none"
       >
-        <WhiteRoseSprig className="absolute -left-5 top-8 w-20 opacity-90 pointer-events-none" />
+        <LuxuryWhiteRoseCluster className="absolute -left-10 top-6 w-28 md:w-32 opacity-90 pointer-events-none animate-floral-sway" />
         <BaroqueSideFlourish flipX className="relative w-full h-auto" />
       </div>
 

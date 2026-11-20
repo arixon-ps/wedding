@@ -24,7 +24,7 @@ body {
   padding: 0;
   background-color: #c5bdc1;
   color: #3e383a;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Silk & Fine Linen Grain Surface */
@@ -63,13 +63,13 @@ body {
   color: #9e7b3b;
   background: linear-gradient(
     115deg,
-    #7f5f26 0%,
-    #9e7b3b 28%,
-    #e8cd8b 46%,
-    #fff4d4 50%,
-    #d6b267 54%,
-    #9e7b3b 74%,
-    #7a5b24 100%
+    #785923 0%,
+    #967334 28%,
+    #c9a252 46%,
+    #dfb967 50%,
+    #c69e4f 54%,
+    #967334 74%,
+    #755621 100%
   );
   background-size: 260% 100%;
   -webkit-background-clip: text;
