@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 interface RevealProps {
   children: React.ReactNode;
   delayMs?: number;
+  variant?: 'up' | 'scale';
   className?: string;
 }
 
@@ -13,6 +14,7 @@ interface RevealProps {
 export const Reveal: React.FC<RevealProps> = ({
   children,
   delayMs = 0,
+  variant = 'up',
   className = '',
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -49,7 +51,9 @@ export const Reveal: React.FC<RevealProps> = ({
   return (
     <div
       ref={ref}
-      className={`reveal-block ${visible ? 'is-visible' : ''} ${className}`}
+      className={`reveal-block ${variant === 'scale' ? 'reveal-scale' : ''} ${
+        visible ? 'is-visible' : ''
+      } ${className}`}
       style={delayMs ? { transitionDelay: `${delayMs}ms` } : undefined}
     >
       {children}

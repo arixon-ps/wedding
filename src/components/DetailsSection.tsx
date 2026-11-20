@@ -4,6 +4,7 @@ import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
 import {
   CalendarDrawIcon,
   ClockDrawIcon,
+  EveningLanternDrawIcon,
   GoldFlourishDrawDivider,
   LocationPinDrawIcon,
   NoCameraDrawIcon,
@@ -27,7 +28,7 @@ export const DetailsSection: React.FC = () => {
           transform: `translate3d(${parallaxRight.x}px, ${parallaxRight.y}px, 0) rotate(${parallaxRight.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig className="absolute -left-6 top-8 w-24 opacity-85" />
+        <WhiteRoseSprig className="absolute -left-6 top-8 w-24 opacity-85 animate-floral-sway" />
         <BaroqueSideFlourish flipX className="relative w-full h-auto" />
       </div>
       <div
@@ -37,15 +38,15 @@ export const DetailsSection: React.FC = () => {
           transform: `translate3d(${parallaxLeft.x}px, ${parallaxLeft.y}px, 0) rotate(${parallaxLeft.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig flipX className="absolute -right-6 bottom-8 w-24 opacity-85" />
+        <WhiteRoseSprig flipX className="absolute -right-6 bottom-8 w-24 opacity-85 animate-floral-sway" />
         <BaroqueSideFlourish className="relative w-full h-auto" />
       </div>
 
-      <div className="relative z-10 max-w-xl mx-auto flex flex-col items-center text-center space-y-12 md:space-y-14">
+      <div className="relative z-10 max-w-xl mx-auto flex flex-col items-center text-center space-y-8 md:space-y-10">
         {/* 1. Wedding Date */}
-        <Reveal delayMs={50}>
-          <div className="flex flex-col items-center space-y-2.5 text-[#3E383A]">
-            <DrawOnView>
+        <Reveal delayMs={50} className="w-full max-w-md">
+          <div className="group flex flex-col items-center space-y-2 text-[#3E383A] rounded-2xl px-8 py-6 bg-[#EFECE9]/40 border border-[#9E7B3B]/25 shadow-[0_8px_22px_rgba(55,45,50,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9E7B3B]/55">
+            <DrawOnView className="transition-transform duration-300 group-hover:scale-105">
               <CalendarDrawIcon className="w-12 h-12 mb-1" />
             </DrawOnView>
             <p className="font-body text-xl sm:text-2xl font-medium">يوم الثلاثاء</p>
@@ -59,9 +60,9 @@ export const DetailsSection: React.FC = () => {
         </Reveal>
 
         {/* 2. Wedding Time */}
-        <Reveal delayMs={100}>
-          <div className="flex flex-col items-center space-y-2 text-[#3E383A]">
-            <DrawOnView>
+        <Reveal delayMs={100} className="w-full max-w-md">
+          <div className="group flex flex-col items-center space-y-2 text-[#3E383A] rounded-2xl px-8 py-6 bg-[#EFECE9]/40 border border-[#9E7B3B]/25 shadow-[0_8px_22px_rgba(55,45,50,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9E7B3B]/55">
+            <DrawOnView className="transition-transform duration-300 group-hover:scale-105">
               <ClockDrawIcon className="w-12 h-12 mb-1" />
             </DrawOnView>
             <p className="font-body text-xl sm:text-2xl font-bold">الساعة 4 مساءً</p>
@@ -69,9 +70,9 @@ export const DetailsSection: React.FC = () => {
         </Reveal>
 
         {/* 3. Wedding Venue (Pure Editorial Text, No Links/Buttons) */}
-        <Reveal delayMs={150}>
-          <div className="flex flex-col items-center space-y-2 text-[#3E383A]">
-            <DrawOnView>
+        <Reveal delayMs={150} className="w-full max-w-md">
+          <div className="group flex flex-col items-center space-y-2 text-[#3E383A] rounded-2xl px-8 py-6 bg-[#EFECE9]/40 border border-[#9E7B3B]/25 shadow-[0_8px_22px_rgba(55,45,50,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9E7B3B]/55">
+            <DrawOnView className="transition-transform duration-300 group-hover:scale-105">
               <LocationPinDrawIcon className="w-12 h-12 mb-1" />
             </DrawOnView>
             <p className="font-body text-xl sm:text-2xl font-bold">صالة قصر فينسيا</p>
@@ -82,9 +83,13 @@ export const DetailsSection: React.FC = () => {
         </Reveal>
 
         {/* 4. Ornate Gold Flourish Divider & Youth Evening */}
-        <Reveal delayMs={200} className="w-full flex flex-col items-center space-y-6 pt-2">
+        <Reveal delayMs={200} className="w-full flex flex-col items-center space-y-6 pt-3">
           <DrawOnView>
             <GoldFlourishDrawDivider className="w-60 sm:w-72 h-10" />
+          </DrawOnView>
+
+          <DrawOnView>
+            <EveningLanternDrawIcon className="w-12 h-12" />
           </DrawOnView>
 
           <h3 className="font-calligraphy gold-calligraphy text-4xl sm:text-5xl font-bold leading-tight">

@@ -668,3 +668,87 @@ export const BrideGroomSilhouette: React.FC<{ className?: string }> = ({ classNa
     />
   </svg>
 );
+
+/**
+ * Symmetrical 3D white Baroque acanthus crest medallion with embedded gold pearls.
+ */
+export const BaroqueTopCrownMedallion: React.FC<{ className?: string }> = ({
+  className = '',
+}) => {
+  const uid = useId().replace(/:/g, '');
+  return (
+    <svg
+      viewBox="0 0 280 96"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      className={`baroque-relief-shadow select-none pointer-events-none ${className}`}
+    >
+      <defs>
+        <linearGradient id={`${uid}-crest`} x1="30" y1="10" x2="250" y2="88" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="45%" stopColor="#F8F6F4" />
+          <stop offset="100%" stopColor="#DDD4D0" />
+        </linearGradient>
+        <radialGradient id={`${uid}-pearl`} cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#FFF5D4" />
+          <stop offset="35%" stopColor="#DFBE74" />
+          <stop offset="75%" stopColor="#C5A059" />
+          <stop offset="100%" stopColor="#7C5C24" />
+        </radialGradient>
+      </defs>
+
+      {/* Left & Right symmetrical wings */}
+      <path
+        d="M140 24 C122 12, 98 18, 86 38 C70 28, 44 34, 30 52 C20 64, 24 80, 42 78 C54 76, 60 66, 54 58 C68 54, 86 64, 100 76 C116 62, 130 56, 140 58 C150 56, 164 62, 180 76 C194 64, 212 54, 226 58 C220 66, 226 76, 238 78 C256 80, 260 64, 250 52 C236 34, 210 28, 194 38 C182 18, 158 12, 140 24 Z"
+        fill={`url(#${uid}-crest)`}
+      />
+      {/* Central Acanthus Shell Crown */}
+      <path
+        d="M140 8 C152 22, 164 34, 162 52 C152 58, 146 62, 140 66 C134 62, 128 58, 118 52 C116 34, 128 22, 140 8 Z"
+        fill="#FFFFFF"
+        stroke="#E4DCD7"
+        strokeWidth="1"
+      />
+      {/* Specular Ridge Highlights */}
+      <path
+        d="M52 50 C76 42, 102 48, 118 60 M228 50 C204 42, 178 48, 162 60"
+        stroke="#FFFFFF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeOpacity="0.9"
+      />
+      {/* Antique Gold Pearls */}
+      <circle cx="140" cy="40" r="6.5" fill={`url(#${uid}-pearl)`} />
+      <circle cx="114" cy="46" r="4.2" fill={`url(#${uid}-pearl)`} />
+      <circle cx="166" cy="46" r="4.2" fill={`url(#${uid}-pearl)`} />
+      <circle cx="76" cy="52" r="3.6" fill={`url(#${uid}-pearl)`} />
+      <circle cx="204" cy="52" r="3.6" fill={`url(#${uid}-pearl)`} />
+    </svg>
+  );
+};
+
+/**
+ * Delicate gold filigree corner bracket for framing countdown units or editorial cards.
+ */
+export const GoldCornerFiligree: React.FC<{ className?: string }> = ({
+  className = '',
+}) => (
+  <svg
+    viewBox="0 0 28 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={`pointer-events-none select-none ${className}`}
+  >
+    <path
+      d="M2 24V8C2 4.68629 4.68629 2 8 2H24"
+      stroke="#9E7B3B"
+      strokeOpacity="0.65"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+    />
+    <circle cx="7" cy="7" r="1.6" fill="#C5A059" />
+  </svg>
+);
+

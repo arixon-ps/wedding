@@ -4,8 +4,12 @@ import {
   BrideGroomSilhouette,
   WhiteRoseSprig,
 } from './BaroqueOrnaments';
-import { Reveal, useScrollParallax } from './Reveal';
-import { VerticalGoldDivider } from './ThinLineIcons';
+import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
+import {
+  BridalBouquetDrawIcon,
+  FloralCrownDividerDrawIcon,
+  VerticalGoldDivider,
+} from './ThinLineIcons';
 
 export const FamiliesSection: React.FC = () => {
   const parallaxRight = useScrollParallax(0.055, 14);
@@ -33,7 +37,7 @@ export const FamiliesSection: React.FC = () => {
           transform: `translate3d(${parallaxRight.x}px, ${parallaxRight.y}px, 0) rotate(${parallaxRight.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig className="absolute -left-8 top-6 w-28 opacity-90" />
+        <WhiteRoseSprig className="absolute -left-8 top-6 w-28 opacity-90 animate-floral-sway" />
         <BaroqueSideFlourish flipX className="relative w-full h-auto" />
       </div>
 
@@ -45,7 +49,7 @@ export const FamiliesSection: React.FC = () => {
           transform: `translate3d(${parallaxLeft.x}px, ${parallaxLeft.y}px, 0) rotate(${parallaxLeft.rotate}deg)`,
         }}
       >
-        <WhiteRoseSprig flipX className="absolute -right-8 bottom-8 w-28 opacity-90" />
+        <WhiteRoseSprig flipX className="absolute -right-8 bottom-8 w-28 opacity-90 animate-floral-sway" />
         <BaroqueSideFlourish className="relative w-full h-auto" />
       </div>
 
@@ -69,9 +73,15 @@ export const FamiliesSection: React.FC = () => {
           </Reveal>
         </div>
 
-        {/* Main Family Heading */}
-        <Reveal delayMs={360}>
-          <h2 className="font-calligraphy gold-calligraphy text-4xl sm:text-5xl font-bold mb-12 md:mb-14 leading-tight">
+        {/* Ornate Floral Crest Divider + Main Family Heading */}
+        <Reveal delayMs={340} className="flex flex-col items-center mb-12 md:mb-14">
+          <DrawOnView className="mb-3">
+            <FloralCrownDividerDrawIcon className="w-52 sm:w-64 h-9" />
+          </DrawOnView>
+          <DrawOnView className="mb-2">
+            <BridalBouquetDrawIcon className="w-12 h-12" />
+          </DrawOnView>
+          <h2 className="font-calligraphy gold-calligraphy text-4xl sm:text-5xl font-bold leading-tight">
             أفراح آل عاشور
           </h2>
         </Reveal>

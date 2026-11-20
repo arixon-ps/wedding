@@ -1,7 +1,9 @@
 import React from 'react';
+import whiteRosesSilkImg from '../assets/images/white_roses_silk_1795173597465.jpg';
 import {
   ArabesqueCartoucheBackdrop,
   BaroqueCornerScroll,
+  BaroqueTopCrownMedallion,
   WhiteRoseSprig,
 } from './BaroqueOrnaments';
 import { DrawOnView, useScrollParallax } from './Reveal';
@@ -22,18 +24,48 @@ export const HeroSection: React.FC = () => {
       aria-label="الواجهة الرئيسية للدعوة"
       className="relative min-h-[100svh] w-full flex items-center justify-center px-4 py-14 md:py-20 overflow-hidden"
     >
+      {/* Soft atmospheric floral silk vignette melting into dusty mauve canvas */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        style={{
+          maskImage: 'radial-gradient(circle at 50% 48%, rgba(0,0,0,0.9) 12%, transparent 72%)',
+          WebkitMaskImage:
+            'radial-gradient(circle at 50% 48%, rgba(0,0,0,0.9) 12%, transparent 72%)',
+        }}
+      >
+        <img
+          src={whiteRosesSilkImg}
+          alt=""
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover opacity-[0.16] animate-ken-burns"
+        />
+      </div>
+
       {/* Subtle radial sheen behind central plaque */}
       <div
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle at 50% 48%, rgba(239,236,233,0.36) 0%, rgba(197,189,193,0) 62%)',
+            'radial-gradient(circle at 50% 48%, rgba(239,236,233,0.42) 0%, rgba(197,189,193,0) 62%)',
         }}
       />
 
       {/* Central Arabesque Cartouche Container */}
-      <div className="relative w-full max-w-[460px] md:max-w-[520px] flex items-center justify-center my-6">
+      <div
+        className="relative w-full max-w-[460px] md:max-w-[520px] flex items-center justify-center my-6 animate-hero-bloom"
+        style={{
+          transform: `translate3d(${parallax.x * 0.16}px, ${parallax.y * 0.12}px, 0)`,
+        }}
+      >
+        {/* Top Sculpted Baroque Crown Medallion */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-5 sm:-top-6 left-1/2 -translate-x-1/2 w-36 sm:w-44 z-30 pointer-events-none"
+        >
+          <BaroqueTopCrownMedallion className="w-full h-auto" />
+        </div>
         {/* Corner White Roses peeking delicately from behind 3D stucco reliefs */}
         <div
           aria-hidden="true"

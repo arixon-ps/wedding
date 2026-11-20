@@ -257,3 +257,229 @@ export const NoCameraDrawIcon: React.FC<IconProps> = ({ className = 'w-12 h-12' 
     />
   </svg>
 );
+
+export const BridalBouquetDrawIcon: React.FC<IconProps> = ({ className = 'w-14 h-14' }) => (
+  <svg
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={className}
+  >
+    {/* Central rose bloom */}
+    <path
+      d="M32 14C37 14 41 18 41 23C41 28 37 32 32 32C27 32 23 28 23 23C23 18 27 14 32 14Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.4"
+      pathLength={100}
+      className="svg-draw-path"
+    />
+    <path
+      d="M32 19C34.5 19 36 21 35.5 23.5C35 25.5 32.5 26.5 30.5 25C29 23.8 29.5 21 31.5 20.5"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '150ms' }}
+    />
+    {/* Flanking botanical leaves & buds */}
+    <path
+      d="M23 24C16 21 12 25 14 31C18 32 22 29 23 24ZM41 24C48 21 52 25 50 31C46 32 42 29 41 24Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinejoin="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '240ms' }}
+    />
+    {/* Tied silk stems */}
+    <path
+      d="M27 32L22 50M32 32V52M37 32L42 50"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '320ms' }}
+    />
+    <path
+      d="M24 41C28 43 36 43 40 41M25 41C21 44 19 47 21 50M39 41C43 44 45 47 43 50"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '400ms' }}
+    />
+  </svg>
+);
+
+export const PalaceArchDrawIcon: React.FC<IconProps> = ({ className = 'w-12 h-12' }) => (
+  <svg
+    viewBox="0 0 56 56"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={className}
+  >
+    <path
+      d="M11 47V24C11 14 21 9 28 6C35 9 45 14 45 24V47"
+      stroke="#9E7B3B"
+      strokeWidth="1.45"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      pathLength={100}
+      className="svg-draw-path"
+    />
+    <path
+      d="M17 47V26C17 19 23 15 28 12.5C33 15 39 19 39 26V47"
+      stroke="#9E7B3B"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '180ms' }}
+    />
+    <path
+      d="M8 47H48M28 13V22M24 22H32L28 27L24 22Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '300ms' }}
+    />
+  </svg>
+);
+
+export const EveningLanternDrawIcon: React.FC<IconProps> = ({ className = 'w-12 h-12' }) => (
+  <svg
+    viewBox="0 0 56 56"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={className}
+  >
+    <path
+      d="M28 6V11M22 14H34L38 22V38L32 45H24L18 38V22L22 14Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.45"
+      strokeLinejoin="round"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+    />
+    <path
+      d="M23 45L28 50L33 45M28 24V34M24.5 29C24.5 26.5 26 24.5 28 23.5C30 24.5 31.5 26.5 31.5 29C31.5 31.5 30 33.5 28 33.5C26 33.5 24.5 31.5 24.5 29Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '220ms' }}
+    />
+    <path
+      d="M11 19L13 20M45 19L43 20M10 29H13M43 29H46"
+      stroke="#9E7B3B"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '340ms' }}
+    />
+  </svg>
+);
+
+export const QuillAndSealDrawIcon: React.FC<IconProps> = ({ className = 'w-14 h-14' }) => (
+  <svg
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={className}
+  >
+    {/* Envelope & letter */}
+    <rect
+      x="11"
+      y="22"
+      width="34"
+      height="24"
+      rx="3"
+      stroke="#9E7B3B"
+      strokeWidth="1.4"
+      pathLength={100}
+      className="svg-draw-path"
+    />
+    <path
+      d="M12 24L28 36L44 24"
+      stroke="#9E7B3B"
+      strokeWidth="1.35"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '160ms' }}
+    />
+    {/* Delicate feather quill */}
+    <path
+      d="M54 10C45 11 37 18 33 27L31 35L39 33C48 29 54 20 54 10Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.35"
+      strokeLinejoin="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '280ms' }}
+    />
+    <path
+      d="M28 40L32 34"
+      stroke="#9E7B3B"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '360ms' }}
+    />
+  </svg>
+);
+
+export const FloralCrownDividerDrawIcon: React.FC<IconProps> = ({
+  className = 'w-56 h-10',
+}) => (
+  <svg
+    viewBox="0 0 240 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={className}
+  >
+    <path
+      d="M14 20H88C98 20 105 11 114 12C118 12.5 120 16 120 20C120 16 122 12.5 126 12C135 11 142 20 152 20H226"
+      stroke="#9E7B3B"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+    />
+    <path
+      d="M96 20C104 20 108 28 115 28C118 28 120 24 120 20C120 24 122 28 125 28C132 28 136 20 144 20"
+      stroke="#9E7B3B"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '180ms' }}
+    />
+    <path
+      d="M120 11L124.5 20L120 29L115.5 20L120 11Z"
+      stroke="#9E7B3B"
+      strokeWidth="1.2"
+      pathLength={100}
+      className="svg-draw-path"
+      style={{ transitionDelay: '300ms' }}
+    />
+  </svg>
+);
+

@@ -10,7 +10,8 @@ import {
   BaroqueCornerScroll,
   WhiteRoseSprig,
 } from './BaroqueOrnaments';
-import { Reveal, useScrollParallax } from './Reveal';
+import { DrawOnView, Reveal, useScrollParallax } from './Reveal';
+import { QuillAndSealDrawIcon } from './ThinLineIcons';
 
 interface PrivateWishesSectionProps {
   onWishSubmitted?: () => void;
@@ -115,6 +116,9 @@ export const PrivateWishesSection: React.FC<PrivateWishesSectionProps> = ({
 
           <div className="relative z-10">
             <Reveal delayMs={100}>
+              <DrawOnView className="flex justify-center mb-2">
+                <QuillAndSealDrawIcon className="w-14 h-14" />
+              </DrawOnView>
               <h2 className="font-calligraphy gold-calligraphy text-3xl sm:text-4xl font-bold leading-snug">
                 أرسل تهنئة خاصة للعروسين
               </h2>

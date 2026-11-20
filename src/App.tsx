@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { CountdownSection } from './components/CountdownSection';
 import { DetailsSection } from './components/DetailsSection';
+import { EditorialVisualsSection } from './components/EditorialVisualsSection';
 import { FamiliesSection } from './components/FamiliesSection';
 import { FloatingDustAndPetals } from './components/FloatingDustAndPetals';
 import { FooterSection } from './components/FooterSection';
@@ -9,6 +10,7 @@ import { HeroSection } from './components/HeroSection';
 import { OpeningCurtain } from './components/OpeningCurtain';
 import { OwnerWishesDrawer } from './components/OwnerWishesDrawer';
 import { PrivateWishesSection } from './components/PrivateWishesSection';
+import { ScrollProgressThread } from './components/ScrollProgressThread';
 import { romanticAudio } from './utils/audioEngine';
 import { isOwnerModeFromSearch } from './utils/wishes';
 
@@ -63,11 +65,15 @@ export default function App() {
       {/* Minimalist 24px Golden Soundwave Indicator */}
       <GoldenSoundwave isPlaying={audioPlaying} onToggle={handleToggleAudio} />
 
+      {/* Top Scroll Progress Gold Thread & Desktop Chapter Rail */}
+      <ScrollProgressThread />
+
       {/* Single-Page Editorial Invitation Scroll */}
       <main className="relative z-10">
         <HeroSection />
         <FamiliesSection />
         <DetailsSection />
+        <EditorialVisualsSection />
         <CountdownSection />
         <PrivateWishesSection onWishSubmitted={handleWishSubmitted} />
       </main>

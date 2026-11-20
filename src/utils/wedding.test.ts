@@ -1,7 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { calculateCountdown, padTwo } from './countdown';
-import { createAmbientParticle, stepAmbientParticle } from './particles';
+import {
+  createAmbientParticle,
+  createBurstParticles,
+  pickAmbientParticleKind,
+  stepAmbientParticle,
+} from './particles';
 import {
   formatWishesForClipboard,
   isOwnerModeFromSearch,
@@ -41,18 +46,32 @@ test('padTwo pads single digits with leading zero', () => {
   assert.equal(padTwo(24), '24');
 });
 
-test('createAmbientParticle and stepAmbientParticle handle gold dust and white petals with scroll velocity', () => {
-  const petal = createAmbientParticle(1, 1000, 800, () => 0.2);
-  const dust = createAmbientParticle(2, 1000, 800, () => 0.8);
+test('createAmbientParticle and stepAmbientParticle handle dust, petals, silk, sparkles, rings, and bursts', () => {
+  assert.equal(pickAmbientParticleKind(0.1), 'dust');
+  assert.equal(pickAmbientParticleKind(0.55), 'petal');
+  assert.equal(pickAmbientParticleKind(0.78), 'silk');
+  assert.equal(pickAmbientParticleKind(0.88), 'sparkle');
+  assert.equal(pickAmbientParticleKind(0.96), 'ring');
 
-  assert.equal(petal.kind, 'petal');
+  const dust = createAmbientParticle(1, 1000, 800, () => 0.2);
+  const petal = createAmbientParticle(2, 1000, 800, () => 0.55);
+  const ring = createAmbientParticle(3, 1000, 800, () => 0.96);
+
   assert.equal(dust.kind, 'dust');
+  assert.equal(petal.kind, 'petal');
+  assert.equal(ring.kind, 'ring');
 
   const moved = stepAmbientParticle(petal, 1000, 800, 12, 15);
   assert.ok(moved.y > petal.y);
 
   const respawned = stepAmbientParticle({ ...petal, y: 900 }, 1000, 800, 13, 0, () => 0.5);
   assert.ok(respawned.y < 0);
+
+  const burst = createBurstParticles(100, 400, 300, 4, () => 0.5);
+  assert.equal(burst.length, 4);
+  const steppedBurst = stepAmbientParticle(burst[0], 1000, 800, 1);
+  assert.equal(steppedBurst.life, 1);
+  assert.ok(steppedBurst.opacity < burst[0].opacity);
 });
 
 test('validateWishInput validates name and message cleanly', () => {
